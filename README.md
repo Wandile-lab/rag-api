@@ -48,6 +48,8 @@ I started by manually exploring RAG:
 
 - Pulled the nomic-embed-text embedding model
 
+  ![Setting up environment](screenshots/img2.png)
+
 ## RAG explained:
 
 ### 1. Retrieve 
@@ -61,6 +63,7 @@ Ask the AI to answer based on the augmented prompt
 
 I tested by feeding AI information about myself and seeing how it generated more accurate answers.
 
+![Setting up RAG manually](screenshots/img1.png)
 
 ## Comparing the Two AI Models
 ### nomic-embed-text:
@@ -86,6 +89,7 @@ When a question comes in, it is also converted to a vector. ChromaDB finds the
 closest chunks numerically, those are the most semantically relevant pieces of 
 context.
 
+![FastAPI Swagger UI](screenshots/img4.png)
 
 ## Creating the RAG API with FastAPI
 
@@ -108,6 +112,7 @@ Asking “What’s my name?” returned:
 
 “Based on the information provided in the context: Your name is Wandile Ndlovu.”
 
+![Building personal knowledge base](screenshots/img3.png) 
 
 ## Extending to a Multi-User AI Directory
 I added multi-user support to mimic real-world RAG systems:
@@ -125,6 +130,7 @@ Querying with user=Jordan returned only Jordan’s chunks.
 Multi-tenancy: a single software instance serves multiple users (tenants), 
 keeping their data isolated.
 
+![Multi-user API](screenshots/img5.png)
 
 ## Conclusion
 
