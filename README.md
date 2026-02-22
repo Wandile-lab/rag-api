@@ -50,30 +50,28 @@ I started by manually exploring RAG:
 
 ## RAG explained:
 
-###1. Retrieve -
-fetch relevant context from a knowledge base
+### 1. Retrieve 
+Fetch relevant context from a knowledge base
 
-###2. Augment -
-build a prompt including that context
+### 2. Augment 
+Build a prompt including that context
 
-###3. Generate - 
-ask the AI to answer based on the augmented prompt
+### 3. Generate 
+Ask the AI to answer based on the augmented prompt
 
-I tested by feeding AI information about myself and seeing how it generated more
- accurate answers.
+I tested by feeding AI information about myself and seeing how it generated more accurate answers.
 
 
 ## Comparing the Two AI Models
-###nomic-embed-text:
-converts input text into embeddings for semantic relevance
+### nomic-embed-text:
+Converts input text into embeddings for semantic relevance
 
-###qwen2.5:0.5b: 
-generates the actual answer using the retrieved context
+### qwen2.5:0.5b: 
+Generates the actual answer using the retrieved context
 
+## Building a Personal Knowledge Base
 
-##Building a Personal Knowledge Base
-
-###Steps:
+### Steps:
 
 - Wrote a personal profile document (name, interests, learning goals, fun fact)
 
@@ -83,52 +81,52 @@ generates the actual answer using the retrieved context
 
 - Stored everything in a local vector database
 
-##Semantic Search:
+## Semantic Search:
 When a question comes in, it is also converted to a vector. ChromaDB finds the 
 closest chunks numerically, those are the most semantically relevant pieces of 
 context.
 
 
-##Creating the RAG API with FastAPI
+## Creating the RAG API with FastAPI
 
 I also built an API to automate RAG:
 
 Endpoint /ask:
 
-###1. Retrieve: 
+### 1. Retrieve: 
 Gets relevant chunks from ChromaDB
 
-###2. Augment: 
+### 2. Augment: 
 Inserts chunks into the prompt
 
-###3. Generate: 
+### 3. Generate: 
 Sends the prompt to Ollama for an answer
 
-##Testing:
+## Testing:
 
 Asking “What’s my name?” returned:
 
 “Based on the information provided in the context: Your name is Wandile Ndlovu.”
 
 
-##Extending to a Multi-User AI Directory
+## Extending to a Multi-User AI Directory
 I added multi-user support to mimic real-world RAG systems:
 
 - POST /documents: allows new profiles to be submitted dynamically
 
 - Metadata filtering: ensures retrieved context is user-specific (multi-tenancy)
 
-##Tested:
+## Tested:
 
 Querying with user=Jordan returned only Jordan’s chunks.
 
-##Definition:
+## Definition:
 
 Multi-tenancy: a single software instance serves multiple users (tenants), 
 keeping their data isolated.
 
 
-##Conclusion
+## Conclusion
 
 This project taught me:
 
