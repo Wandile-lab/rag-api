@@ -1,0 +1,31 @@
+version: "3.9"
+
+services:
+  chroma:
+    image: ghcr.io/chroma-core/chroma:latest
+    container_name: chroma_db
+    ports:
+      - "8001:8000"  # Chroma web UI (optional)
+    volumes:
+      - ./chroma_db:/data  # persists the database
+    restart: unless-stopped
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    ports:
+      - "11434:11434"  # Ollama local LLM API
+    restart: unless-stopped
+
+  api:
+    build: .
+    container_name: rag_api
+    ports:
+      - "8000:8000"
+    depends_on:
+      - chroma
+      - ollama
+    volumes:
+      - ./chroma_db:/app/chroma_db
+      - ./profile.txt:/app/profile.txt
+    restart: unless-stopped

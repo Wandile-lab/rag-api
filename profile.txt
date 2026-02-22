@@ -1,0 +1,11 @@
+My name is Wandile Ndlovu.
+I'm currently learning about cloud computing, AI, and DevOps.
+
+My career goal is to become a Cloud/DevOps engineer.
+I'm especially interested in automation, infrastructure as code and machine learning.
+
+I have experience with Linux, Python and Azure.
+I'm currently building projects on NextWork to grow my hands-on skills.
+
+For fun, I enjoy learning about AI.
+A fun fact about me is I am definitely not a robot.
