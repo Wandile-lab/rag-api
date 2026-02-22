@@ -114,6 +114,15 @@ Asking “What’s my name?” returned:
 
 ![Building personal knowledge base](screenshots/img3.png) 
 
+## RAG API Pipeline Diagram
+
+Here’s a diagram showing the full RAG workflow:
+
+![RAG API Diagram](screenshots/RAG-API-diagram.png)
+
+*Fig: Full RAG API pipeline (Retrieve → Augment → Generate)*
+
+
 ## Extending to a Multi-User AI Directory
 I added multi-user support to mimic real-world RAG systems:
 
