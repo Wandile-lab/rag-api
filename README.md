@@ -50,26 +50,24 @@ I started by manually exploring RAG:
 
 ## RAG explained:
 
-### 1. Retrieve -
-fetch relevant context from a knowledge base
+### 1. Retrieve 
+Fetch relevant context from a knowledge base
 
-### 2. Augment -
-build a prompt including that context
+### 2. Augment 
+Build a prompt including that context
 
-### 3. Generate - 
-ask the AI to answer based on the augmented prompt
+### 3. Generate 
+Ask the AI to answer based on the augmented prompt
 
-I tested by feeding AI information about myself and seeing how it generated more
- accurate answers.
+I tested by feeding AI information about myself and seeing how it generated more accurate answers.
 
 
 ## Comparing the Two AI Models
 ### nomic-embed-text:
-converts input text into embeddings for semantic relevance
+Converts input text into embeddings for semantic relevance
 
 ### qwen2.5:0.5b: 
-generates the actual answer using the retrieved context
-
+Generates the actual answer using the retrieved context
 
 ## Building a Personal Knowledge Base
 
