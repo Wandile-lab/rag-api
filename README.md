@@ -141,6 +141,24 @@ keeping their data isolated.
 
 ![Multi-user API](screenshots/img5.png)
 
+## Deployment (Docker)
+
+After building the RAG API, I containerized the system using Docker to better understand deployment workflows and environment consistency in real-world applications.
+
+The stack includes:
+- FastAPI application
+- ChromaDB for vector storage
+- Ollama for local LLM inference
+
+I used docker-compose to run the services together locally.
+
+### Challenges
+- Large image sizes (Ollama)
+- WSL2 instability
+- Interrupted image pulls due to power outages
+
+These issues highlighted real-world DevOps challenges such as infrastructure instability, resource-heavy services, and the importance of resilient deployment workflows.
+
 ## Conclusion
 
 This project taught me:
@@ -151,4 +169,6 @@ This project taught me:
 
 - How to extend APIs for multi-user systems
 
-Next goal: Advanced API building and optimizing RAG pipelines for multiple users.
+- How containerization introduces real-world deployment challenges beyond application code
+
+Next goal: Advanced API building and improving the reliability and scalability of containerized RAG systems.
