@@ -6,13 +6,20 @@ from chromadb.utils.embedding_functions.ollama_embedding_function import (
     OllamaEmbeddingFunction,
 )
 
-# GHAS CodeQL test - safe vulnerability
-def ghas_test_eval(user_input: str):
-    eval(user_input)  # unsafe eval, will trigger CodeQL alert
-    return "Done"
+# GHAS CodeQL demonstration - safe vulnerable pattern
+import sqlite3
 
-# GHAS Secret scanning test
-FAKE_KEY = "ghas-test-12345"
+def test_sql_injection(user_input: str):
+    conn = sqlite3.connect(":memory:")
+    cursor = conn.cursor()
+    # Unsafe query, CodeQL will flag
+    query = f"SELECT * FROM profiles WHERE name = '{user_input}'"
+    cursor.execute(query)
+    return cursor.fetchall()
+    
+    # GHAS Secret scanning demo
+AWS_ACCESS_KEY_ID = "AKIAIOSFODNN7EXAMPLE"
+AWS_SECRET_ACCESS_KEY = "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
 
 app = FastAPI()
 
