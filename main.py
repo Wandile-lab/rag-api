@@ -6,6 +6,9 @@ from chromadb.utils.embedding_functions.ollama_embedding_function import (
     OllamaEmbeddingFunction,
 )
 
+# GHAS test trigger
+ghas_enabled = True
+
 app = FastAPI()
 
 # Connect to the ChromaDB collection
@@ -88,3 +91,4 @@ Question: {question}"""
         "context_used": results["documents"][0],
         "filtered_by_user": user,  # Shows which user was filtered (or None for all)
     }
+
