@@ -6,8 +6,13 @@ from chromadb.utils.embedding_functions.ollama_embedding_function import (
     OllamaEmbeddingFunction,
 )
 
-# GHAS test trigger
-ghas_enabled = True
+# GHAS CodeQL test - safe vulnerability
+def ghas_test_eval(user_input: str):
+    eval(user_input)  # unsafe eval, will trigger CodeQL alert
+    return "Done"
+
+# GHAS Secret scanning test
+FAKE_KEY = "ghas-test-12345"
 
 app = FastAPI()
 
